@@ -22,13 +22,17 @@ img {
 
 }
 
+.attribution {
+    margin-top: 1em;
+}
+
 
 .bold {
     font-weight: 700;
 }
 
-.colapse {
-    max-height: 0;
+.collapse {
+    height: 0;
     overflow: hidden;
     transition: all .2s ease-out;
 }
@@ -104,22 +108,25 @@ h1,a {
     text-decoration: none;
     font-size: 14px;
     margin-bottom: 1.5em;
-    position: relative;
-    transition: .3s;
 }
 
-.main-container a:hover {
+.contain {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.arrow {
+    width: 10px;
+    height: 7.5px;
+    transition: .2s;
+}
+
+.contain a:hover{
     color: var(--text-soft-red);
 }
-
-.main-container a::after {
-    content:"";
-    background: url("images/icon-arrow-down.svg") no-repeat;
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    right: 0;
-    top: 4px;
+.contain:hover > a{
+    color: var(--text-soft-red);
 }
 
 .main-container li::after {
@@ -149,11 +156,15 @@ h1,a {
         display: block;
     }
     .container__app {
-        max-width: 50%;
+        max-width: 70%;
         max-height: 75%;
+        min-width: 40%;
+    }
+    .main-container {
+        width:50%;
+    }
+    .container__app {
+        display: flex;
     }
 }
 
-.attribution {
-    margin-top: 1em;
-}
