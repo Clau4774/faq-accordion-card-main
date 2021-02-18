@@ -22,8 +22,15 @@ img {
 
 }
 
-.display-none {
-    display: none;
+
+.bold {
+    font-weight: 700;
+}
+
+.colapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .2s ease-out;
 }
 
 .fw-400 {
@@ -103,7 +110,6 @@ h1,a {
 
 .main-container a:hover {
     color: var(--text-soft-red);
-    
 }
 
 .main-container a::after {
