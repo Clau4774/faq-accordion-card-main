@@ -92,6 +92,7 @@ h1,a {
     background: #fff;
     padding: 2em 1em;
     border-radius: 25px;
+    overflow: hidden;
 }
 
 
@@ -138,33 +139,58 @@ h1,a {
 }
 
 
+/* --Desktop-- */
 
-@media (max-width:375px) {
+.desktop-img__woman {
+    margin-left: -50px;
+    height: 80%;
+    position: relative;
+}
+
+.desktop-img__woman::before {
+    content:'';
+    display: block;
+    background: url("images/bg-pattern-desktop.svg");
+}
+/* --Media Querys-- */
+@media (max-width:675px) {
     .mobile-img {
         display: block;
     }
     .desktop-img {
+        display: none;
+    }
+    .box-image {
         display: none;
     }
 }
 
-@media (min-width:376px) {
+@media (min-width:676px) {
     .mobile-img {
         display: none;
     }
     .desktop-img {
         display: block;
+        width: 48%;
     }
     .container__app {
         max-width: 70%;
-        max-height: 75%;
+        max-height: 60%;
         min-width: 40%;
     }
     .main-container {
-        width:50%;
+        width:48%;
     }
     .container__app {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1 {
+        padding-top:0;
+        padding-bottom:0;
     }
 }
+
+
 
