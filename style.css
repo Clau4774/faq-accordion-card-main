@@ -3,6 +3,7 @@
 *, *::after, *::before {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -24,6 +25,7 @@ img {
 
 .attribution {
     margin-top: 1em;
+    
 }
 
 
@@ -63,27 +65,9 @@ h1,a {
 
 .container {
     background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%) );
-    padding: .5em 0;
+    padding: .5em 0 0 0;
     position: relative;
-}
-
-.mobile-img {
-    width: 15rem;
-    position: relative;
-    left: 15%;
-    top: 65px;
-} 
-
-
-.mobile-img__woman {
-    position: absolute;
-}
-
-.mobile-img__pattern {
-    position: absolute;
-    width:95%;
-    left: 8%;
-    top: 100px;
+    height: 100vh;
 }
 
 .container__app {
@@ -94,6 +78,29 @@ h1,a {
     border-radius: 25px;
     overflow: hidden;
 }
+
+.mobile-img {
+    width: 15rem;
+    position: relative;
+    top: 65px;
+    left: -2%;
+    margin: 0 auto;
+} 
+
+
+.mobile-img__woman {
+    position: absolute;
+    margin: 0 auto;
+}
+
+.mobile-img__pattern {
+    position: absolute;
+    width:95%;
+    left: 8%;
+    top: 100px;
+}
+
+
 
 
 .main-container p{
@@ -141,17 +148,36 @@ h1,a {
 
 /* --Desktop-- */
 
-.desktop-img__woman {
-    margin-left: -50px;
-    height: 80%;
+.desktop-img {
     position: relative;
+    width: 48%;
 }
 
-.desktop-img__woman::before {
-    content:'';
-    display: block;
-    background: url("images/bg-pattern-desktop.svg");
+.box-img {
+    position:absolute;
+    width: 17.5%;
+    top: 35%;
+    z-index: 300;
+    left: 4%;
 }
+
+.desktop-img__woman {
+    position:absolute;
+    width: 100%;
+    top:20%;
+    left:-15%;
+    z-index: 200;    
+}
+
+.desktop-img__pattern {
+    position :absolute;
+    width: 180%;
+    top: -30%;
+    left: -90%;
+    z-index: 100;
+}
+
+
 /* --Media Querys-- */
 @media (max-width:675px) {
     .mobile-img {
@@ -160,35 +186,34 @@ h1,a {
     .desktop-img {
         display: none;
     }
-    .box-image {
-        display: none;
-    }
 }
 
-@media (min-width:676px) {
+@media (min-width:676px){
     .mobile-img {
         display: none;
     }
     .desktop-img {
         display: block;
-        width: 48%;
     }
+   
     .container__app {
-        max-width: 70%;
-        max-height: 60%;
-        min-width: 40%;
+        margin: 3em auto;
+        max-width: 1000px;
     }
     .main-container {
         width:48%;
+        margin-right: 2em;
+        margin-left: auto;
     }
     .container__app {
         display: flex;
         justify-content: space-between;
-        align-items: center;
     }
     h1 {
-        padding-top:0;
-        padding-bottom:0;
+        padding-top: 2em;
+        padding-bottom:2em;
+        margin-left: 0;
+        text-align:left;
     }
 }
 
